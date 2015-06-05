@@ -18,10 +18,10 @@ var Order = function(pizzas) {
 };
 
 $(function() {
-  $('#add-pizza').click(function() {
+  $('#add-pizza').click(function(event) {
     event.preventDefault();
     $('#new-pizza').append(
-      '<div class="single-pie-form">' +
+      '<div class="single-pie-forms">' +
         '<div class="form-group">' +
           '<label for="toppings">Toppings:</label>' +
           '<input type="text" class="form-control" id="toppings">' +
@@ -39,4 +39,30 @@ $(function() {
       '</div>'
     );
   });
+
+  $('#order').click(function(event) {
+    event.preventDefault();
+    var pizzas = []
+    $('.single-pie-forms').each(function() {
+      debugger;
+      var toppings = $(this).find('#toppings').val();
+      var size = $(this).find('#size').val();
+      var quantity = parseInt($(this).find('#quantity').val());
+      pizzas.push(new Pizza(toppings, size, quantity));
+    });
+    var order = new Order(pizzas);
+    alert("You have ordered: " + order + '.' + 'which costs ' + order.cost);
+  });
 });
+
+
+
+
+
+
+
+
+
+
+
+//

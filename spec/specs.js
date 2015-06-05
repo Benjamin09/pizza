@@ -3,4 +3,17 @@ describe("Pizza", function() {
     var pie = new Pizza('nada', 'big', 2);
     expect([pie.toppings, pie.howBig, pie.quantity]).to.eql(['nada', 'big', 2]);
   });
+
+  // it("calculates the cost of the order", function() {
+  //   var pie = new Pizza('nada', 'big', 2);
+  //   expect()
+  // });
+});
+
+describe("Order", function() {
+  it("initializes an Order", function() {
+    var pie = new Pizza('nada', 'big', 2);
+    var order = new Order([pie]);
+    expect(order.pizzas).to.eql([pie]);
+  });
 });

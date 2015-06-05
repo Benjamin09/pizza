@@ -16,3 +16,27 @@ var Order = function(pizzas) {
   this.cost = cost;
   this.pizzas = pizzas;
 };
+
+$(function() {
+  $('#add-pizza').click(function() {
+    event.preventDefault();
+    $('#new-pizza').append(
+      '<div class="single-pie-form">' +
+        '<div class="form-group">' +
+          '<label for="toppings">Toppings:</label>' +
+          '<input type="text" class="form-control" id="toppings">' +
+        '</div>' +
+
+        '<div class="form-group">' +
+          '<label for="size">Size:</label>' +
+          '<input type="text" class="form-control" id="size">' +
+        '</div>' +
+
+        '<div class="form-group">' +
+          '<label for="quantity">Quantity:</label>' +
+          '<input type="text" class="form-control" id="quantity">' +
+        '</div>' +
+      '</div>'
+    );
+  });
+});

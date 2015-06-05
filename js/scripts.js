@@ -14,9 +14,9 @@ var Order = function(pizzas) {
   pizzas.forEach(function(pizza) {
     cost += pizza.cost();
     confirmation += pizza.quantity + ' ' + pizza.howBig + ' ' +
-                    pizza.toppings + ' pizza/s' + '; ';
+                    pizza.toppings + ' pizzas' + '; ';
   });
-  confirmation += "which costs a total of " + cost + "$";
+  confirmation += "which costs a total of " + "$" + cost + ".";
   this.confirmation = confirmation;
   this.cost = cost;
   this.pizzas = pizzas;
@@ -54,7 +54,7 @@ $(function() {
       if ($(this).find('#toppings').val()) {
         var toppings = $(this).find('#toppings').val();
       } else {
-        var toppings = "Fungusaurus!"
+        var toppings = "Fungusaurus"
       };
 
       if ($(this).find('#size').val()) {

@@ -40,8 +40,8 @@ describe("Order", function() {
   it("gives a confirmation message", function() {
     var pie = new Pizza('pepperoni', 'medium', 1);
     var order = new Order([pie]);
-    var message = 'You have ordered 1 medium pepperoni pizza/s; ' +
-                  'which costs a total of 10$';
+    var message = 'You have ordered 1 medium pepperoni pizzas; ' +
+                  'which costs a total of $10.';
     expect(order.confirmation).to.equal(message);
   });
 });

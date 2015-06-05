@@ -1,6 +1,6 @@
 describe("Pizza", function() {
   it("initializes a Pizza", function() {
-    var aPizza = new Pizza('pepperoni', 'large');
-    expect([aPizza.toppings, aPizza.howBig]).to.eql(['pepperoni', 'large']);
+    var pie = new Pizza('nada', 'big', 2);
+    expect([pie.toppings, pie.howBig, pie.quantity]).to.eql(['nada', 'big', 2]);
   });
 });

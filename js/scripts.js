@@ -1,4 +1,5 @@
-var Pizza = function(toppings, howBig) {
+var Pizza = function(toppings, howBig, quantity) {
   this.toppings = toppings;
-  this.howBig = howBig; 
+  this.howBig = howBig;
+  this.quantity = quantity;
 };

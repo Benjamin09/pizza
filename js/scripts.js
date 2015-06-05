@@ -56,7 +56,7 @@ $(function() {
       pizzas.push(new Pizza(toppings, size, quantity));
     });
     var order = new Order(pizzas);
-    // alert(order.confirmation)
+    alert(order.confirmation);
     // alert("You have ordered a " + order.pizzas[0].toppings + 'pizza,' + 'which costs ' + order.cost);
   });
 });

@@ -13,7 +13,8 @@ var Order = function(pizzas) {
   var confirmation = 'You have ordered ';
   pizzas.forEach(function(pizza) {
     cost += pizza.cost();
-    confirmation += pizza.quantity +' '+ pizza.howBig +' '+ pizza.toppings +'; '
+    confirmation += pizza.quantity + ' ' + pizza.howBig + ' ' +
+                    pizza.toppings + ' pizza/s' + '; ';
   });
   confirmation += "which costs a total of " + cost + "$";
   this.confirmation = confirmation;
@@ -49,10 +50,25 @@ $(function() {
     event.preventDefault();
     var pizzas = []
     $('.single-pie-forms').each(function() {
-      // debugger;
-      var toppings = $(this).find('#toppings').val();
-      var size = $(this).find('#size').val();
-      var quantity = parseInt($(this).find('#quantity').val());
+
+      if ($(this).find('#toppings').val()) {
+        var toppings = $(this).find('#toppings').val();
+      } else {
+        var toppings = "Fungusaurus!"
+      };
+
+      if ($(this).find('#size').val()) {
+        var size = $(this).find('#size').val();
+      } else {
+        var size = "Humongous"
+      };
+
+      if (parseInt($(this).find('#quantity').val())) {
+        var quantity = parseInt($(this).find('#quantity').val());
+      } else {
+        var quantity = 99;
+      };
+
       pizzas.push(new Pizza(toppings, size, quantity));
     });
     var order = new Order(pizzas);

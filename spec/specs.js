@@ -36,4 +36,12 @@ describe("Order", function() {
     var order = new Order([pie, pie2]);
     expect(order.cost).to.equal(30);
   });
+
+  it("gives a confirmation message", function() {
+    var pie = new Pizza('pepperoni', 'medium', 1);
+    var order = new Order([pie]);
+    var message = 'You have ordered 1 medium pepperoni; ' +
+                  'which costs a total of 10$';
+    expect(order.confirmation).to.equal(message);
+  });
 });

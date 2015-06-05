@@ -10,12 +10,17 @@ Pizza.prototype.cost = function() {
 
 var Order = function(pizzas) {
   var cost = 0;
+  var confirmation = 'You have ordered ';
   pizzas.forEach(function(pizza) {
     cost += pizza.cost();
+    confirmation += pizza.quantity +' '+ pizza.howBig +' '+ pizza.toppings +'; '
   });
+  confirmation += "which costs a total of " + cost + "$";
+  this.confirmation = confirmation;
   this.cost = cost;
   this.pizzas = pizzas;
 };
+
 
 $(function() {
   $('#add-pizza').click(function(event) {
@@ -44,14 +49,15 @@ $(function() {
     event.preventDefault();
     var pizzas = []
     $('.single-pie-forms').each(function() {
-      debugger;
+      // debugger;
       var toppings = $(this).find('#toppings').val();
       var size = $(this).find('#size').val();
       var quantity = parseInt($(this).find('#quantity').val());
       pizzas.push(new Pizza(toppings, size, quantity));
     });
     var order = new Order(pizzas);
-    alert("You have ordered: " + order + '.' + 'which costs ' + order.cost);
+    // alert(order.confirmation)
+    // alert("You have ordered a " + order.pizzas[0].toppings + 'pizza,' + 'which costs ' + order.cost);
   });
 });
 

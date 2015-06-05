@@ -11,7 +11,7 @@ Pizza.prototype.cost = function() {
 var Order = function(pizzas) {
   var cost = 0;
   pizzas.forEach(function(pizza) {
-    cost += pizza.cost;
+    cost += pizza.cost();
   });
   this.cost = cost;
   this.pizzas = pizzas;

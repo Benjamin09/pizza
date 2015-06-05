@@ -17,9 +17,9 @@ describe("Order", function() {
     expect(order.pizzas).to.eql([pie]);
   });
 
-  // it("calculates the cost of an Order", function() {
-  //   var pie = new Pizza('nada', 'big', 2);
-  //   var order = new Order([pie]);
-  //   expect(order.cost).to.equal(2);
-  // });
+  it("calculates the cost of an Order", function() {
+    var pie = new Pizza('nada', 'big', 2);
+    var order = new Order([pie]);
+    expect(order.cost).to.equal(20);
+  });
 });
